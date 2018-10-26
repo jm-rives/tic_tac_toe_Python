@@ -3,9 +3,9 @@ def game_board(piece, x, y):
         accepts as arguments the game piece
         and coordinates ( x == index in list 1, y == index in nested list)
         on game board"""
-    logic_board = [[[], [], []],
-                   [[], [], []],
-                   [[], [], []]
+    logic_board = [[[1], [2], [3]],
+                   [[4], [5], [6]],
+                   [[7], [8], [9]]
                    ]
 
     logic_board[x][y] = piece
@@ -15,3 +15,6 @@ def game_board(piece, x, y):
 
 
 print(game_board('X', 1, 1))
+# WILO get logic board state to persist through plays
+# Break off display code into it's own function
+# building game engine may make future step easier
