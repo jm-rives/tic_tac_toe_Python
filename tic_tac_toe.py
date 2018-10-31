@@ -1,36 +1,39 @@
-board = [[[1], [2], [3]],
-            [[4], [5], [6]],
-            [[7], [8], [9]]
+
+# randomly choose player
+# chosen player gets to choose marker
+# chosen player takes the first turn
+# turn increments
+# board updates
+# repeat process with second player
+# check for win state after turn increments >= 3
+
+# game board for players to assign their game pieces too
+board = [[1], [2], [3],
+            [4], ['X'], [6],
+            [7], [8], [9]
             ]
 
-def display_board(board):
-    bar = "." * 13
-    print(f"{board[0][0]}|{board[0][1]}|{board[0][2]}\n{board[1][0]}|{board[1][1]}|{board[1][2]} \n{board[2][0]}|{board[2][1]}|{board[2][2]} \n")
+# get player input for next move
+move = int(input("Please enter the number where you want your mark:  "))
+
+# test to see if desired space taken
+try:
+# find board coordinates
+    place = board.index([move])
+except:
+    print("Sorry, that is not a valid move. Check the board and try again.")
+    # function call to move later in game development
+
+# update board with valid players move
+board[place] = 'X' # this value will be stored in a variable later in game development
+
+# this will display the game board
+print(f"{board[0]}|{board[1]}|{board[2]}\n{board[3]}|{board[4]}|{board[5]} \n{board[6]}|{board[7]}|{board[8]} \n")
 
 
-def update_board(board, piece, x, y):
-    """the game board is a 2d list that holds the game logic
-        accepts as arguments the game piece
-        and coordinates ( x == index in list 1, y == index in nested list)
-        on game board"""
-
-
-    board[x][y] = piece
-    # the board needs to retain it's updated state while game is in play
-    # need a separate function to update?
-    # Break off display code into it's own function
-    return board
 
 
 
 
-# WILO get logic board state to persist through plays
-# building game engine
-board = update_board(board, 'X', 1, 1)
-board = update_board(board, 'O', 0, 1)
-display_board(board)
-def main():
-    pass
 
-if __name__ == "__main__":
-    main()
+
