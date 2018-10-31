@@ -1,5 +1,7 @@
 
-# randomly choose player
+# randomly choose who goes first and assign player board piece
+playerOne = 'X'
+playerTwo = 'O'
 # chosen player gets to choose marker
 # chosen player takes the first turn
 # turn increments
@@ -25,7 +27,7 @@ except:
     # function call to move later in game development
 
 # update board with valid players move
-board[place] = 'X' # this value will be stored in a variable later in game development
+board[place] = playerTwo # this value will be stored in a variable later in game development
 
 # this will display the game board
 print(f"{board[0]}|{board[1]}|{board[2]}\n{board[3]}|{board[4]}|{board[5]} \n{board[6]}|{board[7]}|{board[8]} \n")
