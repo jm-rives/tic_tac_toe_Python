@@ -32,6 +32,7 @@ player_two = 'O'
 
 # game engine
 turn = 0
+
 while game == True:
     display_board = f"{board[0]}|{board[1]}|{board[2]}\n{board[3]}|{board[4]}|{board[5]} \n{board[6]}|{board[7]}|{board[8]} \n"
     turn += 1
@@ -61,7 +62,7 @@ while game == True:
         playing_X = True
 
     # Check for win condition or tie
-    print("It turn: " + str(turn))
+
     if turn > 3:
     # rows
         if board[0] == board[1] and board[1] == board[2]:
