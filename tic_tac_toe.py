@@ -1,7 +1,7 @@
 import random
 import time
 
-# game board for players to assign their game pieces too
+# game board
 board = [[1], [2], [3],
             [4], [5], [6],
             [7], [8], [9]
@@ -9,26 +9,28 @@ board = [[1], [2], [3],
 
 game = True
 
-# coin_flip
+# coin_flip to choose who goes first
 print("Time for a coin toss players. Choose heads or tails.")
 
 # allow players time to choose heads or tails
 time.sleep(3)
+
 coin_toss = random.randint(0, 1) % 2
 
 if coin_toss == 0:
     result = "Heads"
 else:
     result = "Tails"
-# chosen player takes the first turn
+
+# display winner of coin toss
 print(f"The {result} wins! The winner is Player One and will play 'X' and move first")
 playing_X = True
 
+# game pieces
 player_one = 'X'
 player_two = 'O'
 
-
-# game engine here
+# game engine
 turn = 0
 while game == True:
     display_board = f"{board[0]}|{board[1]}|{board[2]}\n{board[3]}|{board[4]}|{board[5]} \n{board[6]}|{board[7]}|{board[8]} \n"
@@ -58,12 +60,10 @@ while game == True:
             # function call to move later in game development
         playing_X = True
 
-
     # Check for win condition or tie
-    # no win can occur before three turns are complete
     print("It turn: " + str(turn))
     if turn > 3:
-    # horizontal
+    # rows
         if board[0] == board[1] and board[1] == board[2]:
             print(display_board)
             print(f"Player {board[0]} is the WINNER!")
@@ -79,7 +79,7 @@ while game == True:
             print(f"Player {board[0]} is the WINNER!")
             game = False
 
-    # vertical
+    # columns
         elif board[0] == board[3] and board[3] == board[6]:
             print(display_board)
             print(f"Player {board[0]} is the WINNER!")
