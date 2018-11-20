@@ -44,7 +44,7 @@ while game == True:
         try:
             # find board coordinates
             place = board.index([move])
-            board[place] = player_one
+            board[place] = 'X'
         except:
             print("Sorry, that is not a valid move. Check the board and try again.")
             # function call to move later in game development
@@ -56,7 +56,7 @@ while game == True:
         try:
             # find board coordinates
             place = board.index([move])
-            board[place] = player_two
+            board[place] = 'O'
         except:
             print("Sorry, that is not a valid move. Check the board and try again.")
             # function call to move later in game development
