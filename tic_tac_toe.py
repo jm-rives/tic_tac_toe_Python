@@ -36,12 +36,13 @@ while game == True:
     if  playing_X == True:
         print(display_board)
         move = int(input("Please enter the number where you want your mark:  "))
-        # print(display_board)
+
         # test to see if desired space taken
         try:
             # find board coordinates
             place = board.index([move])
             board[place] = 'X'
+
         except:
             print("Sorry, that is not a valid move. Check the board and try again.")
 
@@ -54,6 +55,7 @@ while game == True:
             # find board coordinates
             place = board.index([move])
             board[place] = 'O'
+            # print(display_board)
         except:
             print("Sorry, that is not a valid move. Check the board and try again.")
             # function call to move later in game development
@@ -67,7 +69,6 @@ while game == True:
     if turn > 3:
     # rows
         if board[0] == board[1] and board[1] == board[2]:
-            print(display_board)
             print(f"Player {board[0]} is the WINNER!")
             game = False
 
@@ -99,6 +100,7 @@ while game == True:
             game = False
         else:
             continue
+
 
 
 
