@@ -47,6 +47,7 @@ while game == True:
             print("Sorry, that is not a valid move. Check the board and try again.")
 
         playing_X = False
+        print(display_board)
     else:
         print(display_board)
         move = int(input("Please enter the number where you want your mark:  "))
@@ -73,7 +74,7 @@ while game == True:
             game = False
 
         elif board[3] == board[4] and board[4] == board[5]:
-            print(f"Player {board[3]} is the WINNER!")
+            print(f"Player {board[3]} is the WINNER! ")
             game = False
 
         elif board[6] == board[7] and board[7] == board[8]:
