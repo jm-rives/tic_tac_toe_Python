@@ -60,6 +60,9 @@ while game == True:
         playing_X = True
 
     # Check for win condition or tie
+    if (turn > 8 and game == True):
+        print(f"There is a TIE! Well done players! Best two out of three ; )?")
+        game = False
 
     if turn > 3:
     # rows
