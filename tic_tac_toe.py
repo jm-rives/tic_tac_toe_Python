@@ -42,11 +42,12 @@ while game == True:
             # find board coordinates
             place = board.index([move])
             board[place] = 'X'
-
+            playing_X = False
+            print(display_board)
         except:
             print("Sorry, that is not a valid move. Check the board and try again.")
+            playing_X = True
 
-        playing_X = False
         print(display_board)
     else:
         print(display_board)
@@ -60,7 +61,8 @@ while game == True:
         except:
             print("Sorry, that is not a valid move. Check the board and try again.")
             # function call to move later in game development
-        playing_X = True
+            playing_X = False
+        # playing_X = True
 
     # Check for win condition or tie
     if (turn > 8 and game == True):
